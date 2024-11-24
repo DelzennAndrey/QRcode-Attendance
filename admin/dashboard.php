@@ -1,5 +1,5 @@
 <?php
-include_once "../html/header.php";
+include_once "../html/header.html";
 include_once "../model/listEvent.php";
 ?>
 
@@ -15,5 +15,5 @@ include_once "../model/listEvent.php";
    
     
 <?php
-include_once "../html/footer.php";
+include_once "../html/footer.html";
 ?>
