@@ -21,7 +21,7 @@
         let stamp = urlParams.get('stamp');
         let event = urlParams.get('event');
         let qrCode = '';
-
+        
           let scanner = new Html5QrcodeScanner("reader",{ 
                 fps: 220, 
                 qrbox: {

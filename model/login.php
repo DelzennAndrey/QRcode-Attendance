@@ -14,7 +14,7 @@
     header("location: ../admin/dashboard.php");
   }else if($student_r->num_rows > 0) {
     $_SESSION['log'] = $_POST['username'];
-    header("location: ../student/viewAttendance.php");
+    header("location: ../student/dashboard.php");
   }
   else{
     header("location: ../index.php");
