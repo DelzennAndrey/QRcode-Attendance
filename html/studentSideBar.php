@@ -17,19 +17,24 @@
  
  <aside id="logo-sidebar" class="fixed top-0 left-0 z-40 w-64 h-screen transition-transform -translate-x-full sm:translate-x-0" aria-label="Sidebar">
     <div class="h-full px-3 py-4 overflow-y-auto bg-gray-50 dark:bg-gray-800">
-       <a class="flex items-center p-5 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group">
-          <img src="../img/nmsc.jpeg" class="h-6 me-3 sm:h-7"/>
-          <span class="self-center text-xl font-semibold whitespace-nowrap dark:text-white">Admin</span>
+       <a class=" flex items-center p-5 text-gray-900 rounded-lg dark:text-white group">
+          <img src="../img/user.png" class="h-6 me-3 sm:h-7 text-center"/>
+          <span class="self-center text-xl font-semibold whitespace-nowrap dark:text-dark">Welcome</span>    
        </a>
+       <div>
+         <p class="m-3 self-center text-xl font-semibold whitespace-nowrap dark:text-dark"><?php echo $_SESSION['student_name'];?></p>
+         <p class="m-3 self-center text-xl font-semibold whitespace-nowrap dark:text-dark"><?php echo $_SESSION['course'];?></p>
+         <p class="m-3 self-center text-xl font-semibold whitespace-nowrap dark:text-dark"><?php echo $_SESSION['log'];?></p> 
+       </div>
        <ul class="space-y-2 font-medium">
             <li>
-                <a href="#" class="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group">
+                <a href="../student/dashboard.php" class="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group">
                 <img class="flex-shrink-0 w-5 h-5 text-gray-500 transition duration-75 dark:text-gray-400 group-hover:text-gray-900 dark:group-hover:text-white" src="../img/qr-code.png" alt="">
                 <span class="ms-3 text-xl">Home</span>
                 </a>
             </li>
           <li>
-             <a href="#" class="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group">
+             <a href="../student/viewAttendance.php" class="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group">
                 <img class="flex-shrink-0 w-5 h-5 text-gray-500 transition duration-75 dark:text-gray-400 group-hover:text-gray-900 dark:group-hover:text-white" src="../img/attendant-list.png" alt="">
                 <span class="ms-3 text-xl">Attendance</span>
              </a>

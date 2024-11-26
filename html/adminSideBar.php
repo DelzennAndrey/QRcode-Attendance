@@ -20,7 +20,7 @@
        <a class="flex items-center p-5 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group">
           <img src="../img/nmsc.jpeg" class="h-6 me-3 sm:h-7"/>
           <span class="self-center text-xl font-semibold whitespace-nowrap dark:text-white">Admin</span>
-       </a>
+       </a> 
        <ul class="space-y-2 font-medium">
           <li>
              <a href="#" class="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group">

@@ -14,6 +14,9 @@
     header("location: ../admin/dashboard.php");
   }else if($student_r->num_rows > 0) {
     $_SESSION['log'] = $_POST['username'];
+    $s = $student_r->fetch_assoc();
+    $_SESSION['student_name'] = $s['name'];
+    $_SESSION['course'] = $s['course'];
     header("location: ../student/dashboard.php");
   }
   else{
