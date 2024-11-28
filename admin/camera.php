@@ -1,20 +1,8 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <script src="../node_modules/html5-qrcode/html5-qrcode.min.js"></script>
+<?php include_once"../components/header.html"?>
 
-    <style>
-        #reader{
-            width: 500px;
-        }
-    </style>
-</head>
-<body>
-    <a href="dashboard.php"><button>BACK</button></a>
-    <div id="reader"></div>
+    <a href="dashboard.php" class="bg-red-600 p-3 text-white rounded-lg m-5"><button class="mt-5">BACK</button></a>
+
+    <div id="reader" style="width: 500px;" class="m-auto"></div>
 
     <script>
         let urlParams = new URLSearchParams(window.location.search);
@@ -45,5 +33,4 @@
           }
 
     </script>
-</body>
-</html>
+<?php include_once"../components/footer.html"?>

@@ -5,10 +5,14 @@ include_once "../model/listEvent.php";
 
     $event_name = $_POST['event_name'];
     $date = $_POST['date'];
+    $time = $_POST['time'];
+    $desc = $_POST['description'];
 
     $event_query = "INSERT INTO attendance_event SET
-        `event_name` = '$event_name',
-        `date` = '$date'";
+        event_name = '$event_name',
+        date = '$date',
+        time = '$time',
+        description = '$desc'";
 
     $result = mysqli_query($connection, $event_query);
 
@@ -30,6 +34,7 @@ include_once "../model/listEvent.php";
                 student_id = '$student_id',
                 event_id = '$event_id'";
                 $result = mysqli_query($connection, $query);
+                header("location: ../admin/dashboard.php"); 
         }
     }
 

@@ -1,10 +1,10 @@
 <?php 
-include_once"html/footer.html";
+include_once"components/footer.html";
 ?>
 
 <div class="flex min-h-full flex-col justify-center px-6 py-12 lg:px-8">
   <div class="sm:mx-auto sm:w-full sm:max-w-sm">
-    <img class="mx-auto h-20 w-auto" src="img/nmsc.jpeg" alt="Your Company">
+    <img class="mx-auto h-20 w-auto" src="img/nmsc.png" alt="Your Company">
     <h2 class="mt-10 text-center text-2xl/9 font-bold tracking-tight text-gray-900">Sign in to your account</h2>
   </div>
 
@@ -36,4 +36,4 @@ include_once"html/footer.html";
   </div>
 </div>
 
-<?php include_once"html/footer.html"; ?>
+<?php include_once"components/footer.html"; ?>
