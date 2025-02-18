@@ -26,25 +26,30 @@ CREATE TABLE `admin` (
   `department` varchar(50) NOT NULL,
   `password` varchar(50) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 /*Data for the table `admin` */
 
-/*Table structure for table `event` */
+insert  into `admin`(`id`,`username`,`department`,`password`) values 
+(1,'admin','admin office','12345');
 
-DROP TABLE IF EXISTS `event`;
+/*Table structure for table `attendance_event` */
 
-CREATE TABLE `event` (
+DROP TABLE IF EXISTS `attendance_event`;
+
+CREATE TABLE `attendance_event` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `event_name` varchar(50) NOT NULL,
   `date` date NOT NULL,
+  `time` varchar(50) NOT NULL,
+  `description` varchar(100) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=45 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
-/*Data for the table `event` */
+/*Data for the table `attendance_event` */
 
-insert  into `event`(`id`,`event_name`,`date`) values 
-(1,'meeting','2024-11-18');
+insert  into `attendance_event`(`id`,`event_name`,`date`,`time`,`description`) values 
+(44,'Mass','2024-11-30','02 24 PM','First mass');
 
 /*Table structure for table `student` */
 
@@ -62,29 +67,31 @@ CREATE TABLE `student` (
 /*Data for the table `student` */
 
 insert  into `student`(`student_id`,`name`,`course`,`department`,`password`) values 
-('2022','delzenn mendez','BSIT','CICT','12345');
+('2022-003399','delzenn mendez','BSIT','CICT','12345'),
+('2022-003446','sam manon-og','BSIT','CICT','12345'),
+('2022-004457','jhon mark morpos','BSIT','CICT','12345');
 
 /*Table structure for table `students_attendance` */
 
 DROP TABLE IF EXISTS `students_attendance`;
 
 CREATE TABLE `students_attendance` (
-  `attendance_id` int(11) NOT NULL AUTO_INCREMENT,
   `student_id` char(15) NOT NULL,
   `event_id` int(11) NOT NULL,
   `in` char(20) DEFAULT NULL,
   `out` char(20) DEFAULT NULL,
-  PRIMARY KEY (`attendance_id`),
   KEY `event_id` (`event_id`),
   KEY `student_id` (`student_id`),
-  CONSTRAINT `students_attendance_ibfk_2` FOREIGN KEY (`event_id`) REFERENCES `event` (`id`),
+  CONSTRAINT `students_attendance_ibfk_2` FOREIGN KEY (`event_id`) REFERENCES `attendance_event` (`id`),
   CONSTRAINT `students_attendance_ibfk_3` FOREIGN KEY (`student_id`) REFERENCES `student` (`student_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 /*Data for the table `students_attendance` */
 
-insert  into `students_attendance`(`attendance_id`,`student_id`,`event_id`,`in`,`out`) values 
-(1,'2022',1,NULL,NULL);
+insert  into `students_attendance`(`student_id`,`event_id`,`in`,`out`) values 
+('2022-003399',44,'checked',NULL),
+('2022-003446',44,NULL,NULL),
+('2022-004457',44,NULL,NULL);
 
 /*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
 /*!40014 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS */;
